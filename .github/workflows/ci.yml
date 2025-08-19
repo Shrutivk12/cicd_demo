@@ -29,4 +29,6 @@ jobs:
       if: success()
       run: |
         curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+    - name: Build Docker image
+      run: docker build -t node-ci-demo .
 
